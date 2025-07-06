@@ -1,0 +1,973 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* Main container */
+.home {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-top: 0;
+}
+
+/* Header Styles */
+.top-header {
+  padding: 12px 100px;
+  background: white;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.company-logo {
+  height: 55px;
+  width: auto;
+}
+
+.company-text {
+  color: #2f615d;
+  font-size: 33px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: auto;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #2f615d;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  width: 23px;
+  height: 23px;
+  opacity: 1;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover .social-icon {
+  transform: scale(1.1);
+}
+
+.social-links a:active .social-icon {
+  transform: scale(0.95);
+}
+
+.divider {
+  color: #2f615d;
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  color: #2f615d;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #2f615d;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #2f615d;
+  color: white;
+}
+
+.login-icon {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Navigation Styles */
+.main-nav {
+  background: #2f615d;
+  width: 100%;
+  height: 70px;
+}
+
+.nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 100px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Menu items */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 70px;
+  height: 100%;
+}
+
+.nav-menu li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+/* Tools section */
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 6px 15px;
+  width: 280px;
+  height: 40px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  width: 100%;
+  font-size: 16px;
+  color: #2f615d;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #2f615d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+}
+
+.search-button i {
+  font-size: 16px;
+  color: #2f615d;
+}
+
+.language-selector {
+  position: relative;
+  cursor: pointer;
+  background: white;
+  border-radius: 50px;
+  min-width: 120px;
+  height: 35px;
+}
+
+.selected-language {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 5px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.language-option:hover {
+  background-color: rgba(47, 88, 81, 0.1);
+}
+
+.language-option.active {
+  background-color: rgba(47, 88, 81, 0.05);
+}
+
+.flag {
+  font-size: 16px;
+}
+
+.language-text {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #2f615d;
+  font-size: 14px;
+}
+
+.down-icon {
+  font-size: 10px;
+  color: #2F5851;
+  opacity: 0.5;
+}
+
+/* Hero banner/Carousel styles */
+.carousel-container {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.carousel-slide img {
+  width: 25%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: white;
+}
+
+/* Carousel text overlay styles */
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 80px;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  margin-bottom: 20px;
+  max-width: 800px;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.carousel-subtitle {
+  font-family: 'Karma', sans-serif;
+  font-size: 24px;
+  max-width: 600px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* Add a dark overlay to make text more readable */
+.carousel-slide-item {
+  position: relative;
+  width: 25%;
+  height: 100%;
+}
+
+.carousel-slide-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(0,0,0,0.4) 0%,
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+.carousel-slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Interest section */
+.interest-section {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.interest-heading {
+  background-color: #2f615d;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  margin: 0;
+}
+
+.products-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-item {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.product-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.product-image {
+  width: 50%;
+  object-fit: cover;
+  height: 300px;
+}
+
+.product-text {
+  width: 50%;
+  background-color: #808080;
+  padding: 25px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover and active state */
+.product-text:hover,
+.product-text.active {
+  background-color: #2f615d;
+}
+
+.product-text h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.product-text h2:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: white;
+}
+
+.product-text p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 15px;
+}
+
+.others-section {
+  width: 100%;
+  background-color: #808080;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.others-section:hover,
+.others-section.active {
+  background-color: #2F5851;
+}
+
+.others-section h2 {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .product-item {
+    flex-direction: column;
+  }
+  
+  .product-item.reverse {
+    flex-direction: column;
+  }
+  
+  .product-image,
+  .product-text {
+    width: 100%;
+  }
+  
+  .product-image {
+    height: 200px;
+  }
+}
+
+/* Others section */
+.others-section {
+  background-color: rgba(46, 96, 93, 1);
+  margin-top: 29px;
+  width: 1175px;
+  max-width: 100%;
+  padding-left: 70px;
+  padding-right: 70px;
+  font-family:
+    Jockey One,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  font-size: 36px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .others-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    white-space: initial;
+  }
+}
+
+/* Newsletter Section - Updated styles */
+.newsletter-section {
+  background-color: #2f615d;
+  padding: 60px 20px;
+  margin-top: 40px;
+}
+
+.newsletter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.newsletter-text h2 {
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  line-height: 1;
+  margin: 0;
+}
+
+.newsletter-form {
+  flex: 1;
+  max-width: 600px;
+}
+
+.newsletter-form p {
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  border: none;
+}
+
+.input-group button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 15px 30px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input-group button:hover {
+  background: white;
+  color: #2f615d;
+}
+
+@media (max-width: 768px) {
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter-text h2 {
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group button {
+    width: 100%;
+  }
+}
+
+/* Footer */
+.main-footer {
+  background-color: #2F5851;
+  padding: 40px 60px;
+  color: white;
+  display: grid;
+  grid-template-columns: 200px 1fr 300px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Logo */
+.footer-logo {
+  width: 150px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+/* Contact Section */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.contact-item i {
+  width: 20px;
+  font-size: 18px;
+}
+
+/* Links Section */
+.footer-right h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 30px;
+}
+
+.links-grid a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1024px) {
+  .main-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .footer-logo {
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+}
+
+/* Remove any duplicate images */
+.hero-banner {
+  display: none;
+}
+
+/* What's New Section */
+.whats-new-section {
+  padding: 40px 0;
+  background-color: #f5f5f5;
+}
+
+.section-heading {
+  background-color: #2F5851;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  margin: 0;
+}
+
+.new-products-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.new-product-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.new-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.new-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #2F5851;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.new-product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: #2F5851;
+  margin: 0 0 10px 0;
+}
+
+.product-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.view-details-btn {
+  background-color: #808080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.view-details-btn:hover {
+  background-color: #2F5851;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .new-products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .new-products-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .new-product-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: #2f615d;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(47, 88, 81, 0.1);
+}
+
+/* Additional styles for other components can go here */
+
+@media print {
+    /* Hide everything that should NOT be printed */
+    .top-header,          /* Your main header */
+    .main-nav,            /* Your main navigation bar */
+    .print-buttons-container, /* The container for your print buttons */
+    .related-products-section, /* The related products section */
+    .main-footer,         /* Your application footer */
+    .hide-on-print {      /* A generic class you can add to any other element you want to hide */
+        display: none !important;
+    }
+
+    /* Make only the printable-product-details section visible and properly positioned */
+    #printable-product-details {
+        display: block !important; /* Ensure it's visible */
+        position: static !important; /* Reset positioning for print flow */
+        margin: 0 !important;      /* Remove any margins */
+        padding: 0 !important;     /* Remove any padding */
+        width: 100% !important;    /* Ensure it takes full print width */
+        max-width: none !important; /* Remove max-width constraints if any */
+        box-shadow: none !important; /* Remove shadows if any */
+        border: none !important;     /* Remove borders if any */
+        background-color: white !important; /* Ensure white background for content */
+        color: black !important; /* Ensure text is black for readability */
+
+        /* Ensure content doesn't break awkwardly across pages */
+        page-break-after: avoid; 
+        page-break-before: avoid;
+        page-break-inside: auto; /* Allow content to break inside if necessary */
+    }
+
+    /* Ensure all children within the printable section are also visible */
+    #printable-product-details *,
+    #printable-product-details *::before,
+    #printable-product-details *::after {
+        visibility: visible !important;
+        display: block !important; /* Set to block to ensure content flows vertically */
+        color: inherit !important; /* Inherit text color */
+        background-color: inherit !important; /* Inherit background color */
+    }
+
+    /* Special handling for images within the printable area */
+    #printable-product-details img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* Optional: Clean up body for printing */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important; /* Allow content to flow without scrollbars */
+    }
+}
+
+.company-dropdown,
+.product-dropdown {
+  position: relative;
+}
+
+.company-dropdown .dropdown-menu,
+.product-dropdown .dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #2f615d;
+  color: #fff;
+  min-width: 140px;
+  max-width: 180px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.company-dropdown .dropdown-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.company-dropdown .dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Jockey One', Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.company-dropdown .dropdown-menu li:hover {
+  background: #244a47;
+}
+
+.product-dropdown .dropdown-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.product-dropdown .dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Jockey One', Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.product-dropdown .dropdown-menu li:hover {
+  background: #244a47;
+}
+
+.interest-box {
+  background: #888;
+  color: #fff;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  height: 100%;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.interest-box.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.interest-box:hover:not(.disabled) {
+  background: #2f615d; /* Your website's teal color */
+}
+
+.interest-box.disabled:hover {
+  background: #2f615d; /* Allow hover color for disabled too */
+}
+

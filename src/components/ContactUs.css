@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Karma:wght@400;700&family=Montserrat:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap');
+
+.contactus-outer {
+  background: #fff;
+  min-height: 100vh;
+  padding-bottom: 32px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.contactus-titlebar {
+  width: 100vw;
+  background: #2c5e57; /* Use your navbar color */
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 0;
+  text-align: center;
+  margin-top: 32px; /* <-- This creates the white gap! Adjust as needed */
+}
+
+.contactus-header {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 18px 0 12px 0; /* Only vertical padding for the bar itself */
+}
+
+.contactus-divider {
+  width: 90%;
+  height: 4px;
+  background-color: #2c5e57;
+  margin: 12px auto 32px auto;
+  border: none;
+}
+
+.contactus-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.contactus-form-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 520px;
+  min-width: 320px;
+  margin-top: 0;
+}
+
+.contactus-form-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #2c5e57;
+  font-family: 'Jockey One', Arial, sans-serif;
+  margin-bottom: 4px;
+  margin-top: 0;
+  background: none;
+  padding: 0;
+}
+
+.contactus-form-desc {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 18px;
+  background: none;
+  padding: 0;
+  font-family: 'Karma', serif;
+}
+
+.contactus-form-side {
+  background: #2c5e57;
+  border-radius: 20px;
+  padding: 28px 28px 24px 28px;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.contactus-form label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.contactus-form label span {
+  width: 160px;
+  text-align: left;
+  margin-right: 12px;
+}
+
+.contactus-form input,
+.contactus-form textarea {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  background: #a6c1bc;
+  color: #244a47;
+  outline: none;
+  font-family: inherit;
+}
+
+.contactus-form textarea {
+  min-height: 90px;
+  resize: vertical;
+  border-radius: 18px;
+}
+
+.contactus-privacy {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.contactus-privacy input[type="checkbox"] {
+  margin-right: 8px;
+  margin-top: 4px;
+}
+
+.contactus-privacy-desc {
+  color: #fff;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.contactus-submit {
+  background: #18312e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+
+.contactus-submit:hover {
+  background: #0f1f1c;
+}
+
+.contactus-details-side {
+  display: flex;
+  gap: 32px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #244a47;
+  margin-bottom: 24px;
+  align-items: flex-start;
+  margin-top: 90px;
+}
+
+.contactus-details-col {
+  min-width: 140px;
+  max-width: 220px;
+  font-size: 1.08rem;
+  word-break: break-word;
+}
+
+.contactus-details-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  color: #2c5e57;
+  font-family: 'Jockey One', Arial, sans-serif;
+}
+
+.contactus-details-bold {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #244a47;
+}
+
+.contactus-details-divider {
+  width: 2px;
+  background: #244a47;
+  opacity: 0.2;
+  height: 100%;
+  margin: 0 16px;
+  align-self: stretch;
+}
+
+.contactus-details-bold .contactus-number,
+.contactus-number {
+  font-family: 'Battambang', Arial, sans-serif !important;
+  letter-spacing: 1px;
+  font-size: 0.80em !important;
+  font-weight: 400 !important;
+}
+
+.contactus-mobileviber-row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 8px;
+}
+.contactus-mobileviber-row > div {
+  min-width: 120px;
+}
+.contactus-mobileviber-row b {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contactus-delivery-row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 8px;
+}
+.contactus-delivery-row > div {
+  min-width: 120px;
+}
+.contactus-delivery-row b {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contactus-form-side,
+  .contactus-details-side {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .contactus-form label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contactus-form label span {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+}
