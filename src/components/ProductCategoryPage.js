@@ -120,34 +120,26 @@ export default function ProductCategoryPage() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                // Collect application IDs relevant to the current *navigation category*
-                const categoryApps = filteredApplicationsInNavCategory;
-                const applicationIdsToFilter = selectedApplicationId ? [selectedApplicationId] : categoryApps.map(app => app.id);
-
-                if (applicationIdsToFilter.length === 0 && !searchTerm) {
-                    // Don't fetch if no applications and no search term (prevent empty query)
-                    setProducts([]);
-                    return;
-                }
-
+                // Simplified logic - always fetch products for the category
                 const queryParams = new URLSearchParams();
-                if (searchTerm) {
+                
+                // Only add search if it exists
+                if (searchTerm && searchTerm.trim()) {
                     queryParams.append('search', searchTerm);
                 }
-                if (applicationIdsToFilter.length > 0) {
-                    queryParams.append('application_ids', applicationIdsToFilter.join(','));
+                
+                // Only add application filter if selected
+                if (selectedApplicationId) {
+                    queryParams.append('application_ids', selectedApplicationId);
                 }
-                // NEW: Add ranges to query parameters (backend will need to handle these)
-                queryParams.append('minTemp', temperatureRange[0]);
-                queryParams.append('maxTemp', temperatureRange[1]);
-                queryParams.append('minWeight', weightRange[0]);
-                queryParams.append('maxWeight', weightRange[1]);
-                queryParams.append('minDiameter', diameterRange[0]);
-                queryParams.append('maxDiameter', diameterRange[1]);
-                queryParams.append('minPressure', workingPressureRange[0]);
-                queryParams.append('maxPressure', workingPressureRange[1]);
+                
+                // Add category filter
+                if (categoryId) {
+                    queryParams.append('category_id', categoryId);
+                }
 
                 const productsResponse = await axios.get(`${API_BASE_URL}/api/products?${queryParams.toString()}`);
+                console.log('Products fetched:', productsResponse.data); // Debug log
                 setProducts(productsResponse.data);
 
             } catch (error) {
@@ -156,15 +148,11 @@ export default function ProductCategoryPage() {
             }
         };
 
-        // Only fetch if categoryId is available and applications are loaded, or if search term is active
-        if (categoryId || searchTerm) {
-            const delayDebounceFn = setTimeout(() => {
-                fetchProducts();
-            }, 500); // Debounce API call for search and filters
-
-            return () => clearTimeout(delayDebounceFn);
+        // Always fetch if we have a categoryId
+        if (categoryId) {
+            fetchProducts();
         }
-    }, [categoryId, searchTerm, selectedApplicationId, temperatureRange, weightRange, diameterRange, workingPressureRange, filteredApplicationsInNavCategory]); // Dependencies for re-fetching
+    }, [categoryId, searchTerm, selectedApplicationId]); // Simplified dependencies
 
     const handleResetFilters = () => {
         setSearchTerm('');

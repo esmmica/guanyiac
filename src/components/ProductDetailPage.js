@@ -180,21 +180,24 @@ export default function ProductDetailPage({
         const fetchProductDetails = async () => {
             try {
                 setLoading(true);
+                console.log('Fetching product details for ID:', productId); // Debug log
+                
                 const productResponse = await axios.get(`${API_BASE_URL}/api/products/${productId}`);
+                console.log('Product details received:', productResponse.data); // Debug log
                 setProduct(productResponse.data);
 
-                // Fetch related products - ADJUST THIS API ENDPOINT AS NEEDED
-                // Ensure your backend has an endpoint like /api/products/related that returns products
-                // You might want to pass the current productId to the backend to get truly related items
-                const relatedResponse = await axios.get(`${API_BASE_URL}/api/products?limit=5`); // Example: fetching any 5 products, replace with actual related logic
+                // Fetch related products
+                const relatedResponse = await axios.get(`${API_BASE_URL}/api/products?limit=5`);
+                console.log('Related products received:', relatedResponse.data); // Debug log
                 setRelatedProducts(relatedResponse.data);
 
                 setError(null);
             } catch (err) {
                 console.error('Error fetching data:', err);
+                console.error('Error response:', err.response?.data); // More detailed error
                 setError('Failed to load product details or related products.');
                 setProduct(null);
-                setRelatedProducts([]); // Clear related products on error
+                setRelatedProducts([]);
             } finally {
                 setLoading(false);
             }

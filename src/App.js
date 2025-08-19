@@ -179,7 +179,9 @@ function App() {
   useEffect(() => {
     const fetchNewProducts = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/products?is_new=true`);
+        // Simplified - just fetch all products and take first 6
+        const response = await axios.get(`${API_BASE_URL}/api/products`);
+        console.log('New products fetched:', response.data); // Debug log
         setNewProducts(response.data.slice(0, 6));
       } catch (error) {
         console.error('Error fetching new products:', error);
@@ -193,8 +195,10 @@ function App() {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(`${API_BASE_URL}/api/categories`);
+        console.log('Categories fetched:', response.data); // Debug log
         setCategories(response.data);
       } catch (error) {
+        console.error('Error fetching categories:', error);
         setCategories([]);
       }
     };
@@ -204,8 +208,10 @@ function App() {
     const fetchPartners = async () => {
       try {
         const res = await axios.get(`${API_BASE_URL}/api/brand-partners`);
+        console.log('Brand partners fetched:', res.data); // Debug log
         setPartners(res.data);
       } catch (err) {
+        console.error('Error fetching brand partners:', err);
         setPartners([]);
       }
     };
