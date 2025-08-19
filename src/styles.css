@@ -971,3 +971,48 @@ body {
   background: #2f615d; /* Allow hover color for disabled too */
 }
 
+/* Dropdown styles */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  min-width: 200px;
+  z-index: 1000;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  height: auto;
+  padding: 0;
+}
+
+.dropdown-menu a {
+  color: #2f615d !important;
+  font-size: 16px !important;
+  padding: 12px 20px !important;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f5f5f5;
+  color: #244d49 !important;
+}
+
+/* Product dropdown specific */
+.product-dropdown {
+  position: relative;
+}
+
+.product-dropdown .nav-link {
+  color: white !important;
+  font-size: 28px !important;
+  padding: 0 15px !important;
+}
+

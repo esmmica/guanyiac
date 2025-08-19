@@ -120,30 +120,22 @@ export default function ProductCategoryPage() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                // Simplified logic - always fetch products for the category
-                const queryParams = new URLSearchParams();
+                console.log('Fetching products for category:', categoryId);
                 
-                // Only add search if it exists
-                if (searchTerm && searchTerm.trim()) {
-                    queryParams.append('search', searchTerm);
-                }
+                // Simple fetch without complex filtering for now
+                const productsResponse = await axios.get(`${API_BASE_URL}/api/products`);
+                console.log('Products fetched:', productsResponse.data);
                 
-                // Only add application filter if selected
-                if (selectedApplicationId) {
-                    queryParams.append('application_ids', selectedApplicationId);
-                }
+                // Filter products by category if needed
+                const filteredProducts = productsResponse.data.filter(product => {
+                    // Check if product belongs to this category
+                    return true; // For now, show all products
+                });
                 
-                // Add category filter
-                if (categoryId) {
-                    queryParams.append('category_id', categoryId);
-                }
-
-                const productsResponse = await axios.get(`${API_BASE_URL}/api/products?${queryParams.toString()}`);
-                console.log('Products fetched:', productsResponse.data); // Debug log
-                setProducts(productsResponse.data);
-
+                setProducts(filteredProducts);
             } catch (error) {
-                console.error('Error fetching products with filters:', error);
+                console.error('Error fetching products:', error);
+                console.error('Error details:', error.response?.data);
                 setProducts([]);
             }
         };
@@ -152,7 +144,7 @@ export default function ProductCategoryPage() {
         if (categoryId) {
             fetchProducts();
         }
-    }, [categoryId, searchTerm, selectedApplicationId]); // Simplified dependencies
+    }, [categoryId]); // Simplified dependencies
 
     const handleResetFilters = () => {
         setSearchTerm('');

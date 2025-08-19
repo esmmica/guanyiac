@@ -178,45 +178,51 @@ function App() {
 
   useEffect(() => {
     const fetchNewProducts = async () => {
-      try {
-        // Simplified - just fetch all products and take first 6
-        const response = await axios.get(`${API_BASE_URL}/api/products`);
-        console.log('New products fetched:', response.data); // Debug log
-        setNewProducts(response.data.slice(0, 6));
-      } catch (error) {
-        console.error('Error fetching new products:', error);
-        setNewProducts([]);
-      }
+        try {
+            console.log('Fetching new products...');
+            const response = await axios.get(`${API_BASE_URL}/api/products`);
+            console.log('All products fetched:', response.data);
+            console.log('Setting new products:', response.data.slice(0, 6));
+            setNewProducts(response.data.slice(0, 6));
+        } catch (error) {
+            console.error('Error fetching new products:', error);
+            console.error('Error response:', error.response?.data);
+            setNewProducts([]);
+        }
     };
 
     fetchNewProducts();
 
     // Fetch categories for dynamic navigation
     const fetchCategories = async () => {
-      try {
-        const response = await axios.get(`${API_BASE_URL}/api/categories`);
-        console.log('Categories fetched:', response.data); // Debug log
-        setCategories(response.data);
-      } catch (error) {
-        console.error('Error fetching categories:', error);
-        setCategories([]);
-      }
+        try {
+            console.log('Fetching categories...');
+            const response = await axios.get(`${API_BASE_URL}/api/categories`);
+            console.log('Categories fetched:', response.data);
+            setCategories(response.data);
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+            console.error('Error response:', error.response?.data);
+            setCategories([]);
+        }
     };
     fetchCategories();
 
     // Fetch brand partners
     const fetchPartners = async () => {
-      try {
-        const res = await axios.get(`${API_BASE_URL}/api/brand-partners`);
-        console.log('Brand partners fetched:', res.data); // Debug log
-        setPartners(res.data);
-      } catch (err) {
-        console.error('Error fetching brand partners:', err);
-        setPartners([]);
-      }
+        try {
+            console.log('Fetching brand partners...');
+            const res = await axios.get(`${API_BASE_URL}/api/brand-partners`);
+            console.log('Brand partners fetched:', res.data);
+            setPartners(res.data);
+        } catch (err) {
+            console.error('Error fetching brand partners:', err);
+            console.error('Error response:', err.response?.data);
+            setPartners([]);
+        }
     };
     fetchPartners();
-  }, []);
+}, []);
 
   const interests = [
     {
